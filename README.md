@@ -27,10 +27,15 @@ The final high-hanging image in landscape mode is acceptable.
 Demonstrate your understanding of today's concepts by answering the following free-form questions. Submit them as a text file along with your project.
 
 * What is a collection view controller (CVC)?
+Answer: It is a view controller that gives us more control over the layout of our cells which can be in rows, columns or have crazy custom layouts.
 * When do you use a table view controller (TVC) and when a collection view controller (CVC)?
+Answer: TVCs are great for a list of items possibly when you need to read more info. CVCs are great for any layout where you want a grid of items or a custom layout beyond what a TVC can give you. Either can be used when you feel like it. 
 * What are the differences in the CVC vs TVC data source methods? 
-* What kinds of interfaces can you build with CVCs that you cannot with TVCs? Under what circumstances are TVCs preferable?
-* When do you use sections to organize table and collection view controllers? What advantages do sections offer?
+Answer: There is very little difference just a few semantic changes so its clear which one is being used. 
+* What kinds of interfaces can you build with CVCs that you cannot with TVCs? Under what circumstances are TVCs preferable? 
+Answer: You can build grids or amazing side scroller rows like we'll do today!
+* When do you use sections to organize table and collection view controllers? What advantages do sections offer? 
+Answer: When there are a lot of items that need to be organized or a lot of items that can be categorized and grouped into sections. They allow us reference to groups of cells or items and give us a way to jump to certain section using an index menu. 
 
 ## Project Setup
 
