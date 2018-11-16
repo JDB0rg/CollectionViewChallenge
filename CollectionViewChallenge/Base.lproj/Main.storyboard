@@ -1,10 +1,76 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14313.18" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14313.18" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Vbx-si-wc8">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14283.14"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
-    <scenes/>
+    <scenes>
+        <!--Collection View Controller-->
+        <scene sceneID="mFO-Yl-dCb">
+            <objects>
+                <collectionViewController id="Vbx-si-wc8" customClass="CollectionViewController" customModule="CollectionViewChallenge" customModuleProvider="target" sceneMemberID="viewController">
+                    <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" id="Yu5-eI-rZT">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="ak2-wL-K70">
+                            <size key="itemSize" width="50" height="50"/>
+                            <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                            <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                            <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                        </collectionViewFlowLayout>
+                        <cells>
+                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="ArtCell" id="Xsa-gb-oQb" customClass="CollectionViewCell" customModule="CollectionViewChallenge" customModuleProvider="target">
+                                <rect key="frame" x="71" y="0.0" width="233" height="275"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
+                                    <rect key="frame" x="0.0" y="0.0" width="233" height="275"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="1000" verticalHuggingPriority="1000" translatesAutoresizingMaskIntoConstraints="NO" id="tAZ-Ur-7pi">
+                                            <rect key="frame" x="0.0" y="0.0" width="233" height="235"/>
+                                        </imageView>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Art" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EGJ-hG-aIj">
+                                            <rect key="frame" x="0.0" y="247" width="233" height="20"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="20" id="Ijl-lb-h52"/>
+                                            </constraints>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                </view>
+                                <constraints>
+                                    <constraint firstItem="tAZ-Ur-7pi" firstAttribute="leading" secondItem="Xsa-gb-oQb" secondAttribute="leading" id="8hH-8s-ij2"/>
+                                    <constraint firstAttribute="bottom" secondItem="EGJ-hG-aIj" secondAttribute="bottom" constant="8" id="9vz-Yy-rjW"/>
+                                    <constraint firstAttribute="bottom" secondItem="tAZ-Ur-7pi" secondAttribute="bottom" constant="40" id="LG0-oc-2Ae"/>
+                                    <constraint firstAttribute="trailing" secondItem="EGJ-hG-aIj" secondAttribute="trailing" id="MKd-ro-uhz"/>
+                                    <constraint firstItem="tAZ-Ur-7pi" firstAttribute="top" secondItem="Xsa-gb-oQb" secondAttribute="top" id="YdN-WG-NMa"/>
+                                    <constraint firstItem="EGJ-hG-aIj" firstAttribute="leading" secondItem="Xsa-gb-oQb" secondAttribute="leading" id="Z6S-fN-ibX"/>
+                                    <constraint firstAttribute="trailing" secondItem="tAZ-Ur-7pi" secondAttribute="trailing" id="fbA-bV-QQp"/>
+                                </constraints>
+                                <viewLayoutGuide key="safeArea" id="I7j-xs-pDo"/>
+                                <size key="customSize" width="233" height="275"/>
+                                <connections>
+                                    <outlet property="artImageView" destination="tAZ-Ur-7pi" id="oN1-VT-tIm"/>
+                                    <outlet property="artNameLabel" destination="EGJ-hG-aIj" id="pKT-ps-XOP"/>
+                                </connections>
+                            </collectionViewCell>
+                        </cells>
+                        <connections>
+                            <outlet property="dataSource" destination="Vbx-si-wc8" id="Qs8-EA-dga"/>
+                            <outlet property="delegate" destination="Vbx-si-wc8" id="ouH-SA-a6s"/>
+                        </connections>
+                    </collectionView>
+                </collectionViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="pZd-c1-fH2" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="64.799999999999997" y="141.67916041979012"/>
+        </scene>
+    </scenes>
 </document>
